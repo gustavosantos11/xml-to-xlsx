@@ -12,14 +12,17 @@ def get_info(archive, values):
             info_nf = dic_archive["NFe"]['infNFe']
         else:
             info_nf = dic_archive["nfeProc"]["NFe"]['infNFe']
+
         note_number = info_nf["@Id"]
         emissor = info_nf["emit"]['xNome']
         client_name = info_nf["dest"]['xNome']
         address = info_nf["dest"]['enderDest']
+
         if "vol" in info_nf["transp"]:
             weight = info_nf["transp"]['vol']['pesoB']
         else:
             weight = "Não Informado"
+
         values.append([note_number, emissor, client_name, address, weight])
 
 
